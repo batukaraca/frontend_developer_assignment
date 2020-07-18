@@ -1,0 +1,114 @@
+
+.left_side_div{
+    width: 250px;
+    height: 100vh; 
+    position: relative; 
+    background:linear-gradient(90deg, rgba(56,205,252,1) 7%, rgba(27,50,217,1) 100%); 
+    position: fixed; 
+    overflow-y: auto;
+    display: flex;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.left_side_div .white_area{
+    background-color: rgba(255, 255, 255, 0.3); 
+    padding:20px; 
+    color:#fff; 
+    text-align: center; 
+    margin-bottom:30px;
+}
+
+.left_side_div .white_area_button{
+    background-color: rgba(255, 255, 255, 0.3); 
+    padding:20px; 
+    color:#fff; 
+    text-align: center; 
+    margin-bottom:30px;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.mainMenu{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
+.item{
+    overflow: hidden;
+}
+.btn{
+    display: block;
+    padding: 15px 20px;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    position: relative;
+    text-align: left;
+}
+.btn .menu_img {
+    vertical-align: bottom;
+    margin-right: 5px;
+    transition: all .2s ease-in-out;
+}
+.subMenu{
+    background: transparent;
+    overflow: hidden;
+    transition: max-height 0.7s;
+    max-height: 0;
+    margin-bottom: 5px;
+}
+.subMenu a{
+    display: block;
+    padding: 7px 0px 7px 20px;
+    color: #fff;
+    font-size: 14px;
+    position: relative;
+    text-decoration: none;
+    
+}
+.subMenu a:hover{
+    background: #273057;
+    transition: all 0.3s;
+}
+.subMenu a:last-child{
+    border:none;
+}
+.item:target .subMenu{
+    max-height: 20em;
+    margin-bottom: 15px;
+}
+
+.item:target .menu_img{
+    transform: rotate(90deg);
+}
+.right_side_div{
+    width: calc(100% - 300px);
+    height: 100vh; 
+    position: relative; 
+    background-color: transparent; 
+    display: flex;
+    float: right;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.search_input{
+    border-radius: 20px;
+    background:rgba(255, 255, 255, 0.3);
+    width: 100%;
+    padding: 7px;
+}

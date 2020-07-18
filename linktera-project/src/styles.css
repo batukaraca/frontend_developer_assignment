@@ -1,0 +1,15 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "./assets/theme/genel.css";
+@import "./assets/fonts/font.css";  
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    list-style: none;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+body{
+    background-color: #efefef;
+}
