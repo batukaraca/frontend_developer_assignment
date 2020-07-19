@@ -14,6 +14,8 @@ export class AppComponent {
   jobs = [];
   advertisements = [];
   logs = [];
+  tempLogs = [];
+  menu = false;
 
   constructor(public api: ApiService) {
     this.getEmployees();
@@ -44,7 +46,6 @@ export class AppComponent {
     await this.api.getNews().then((res: any) => {
       if (res) {
         this.news = res;
-        console.log(this.news);
       } else {
       }
     });
@@ -54,7 +55,6 @@ export class AppComponent {
     await this.api.getJobs().then((res: any) => {
       if (res) {
         this.jobs = res;
-        console.log(this.jobs);
       } else {
       }
     });
@@ -64,7 +64,6 @@ export class AppComponent {
     await this.api.getAdvertisements().then((res: any) => {
       if (res) {
         this.advertisements = res;
-        console.log(this.advertisements);
       } else {
       }
     });
@@ -74,10 +73,30 @@ export class AppComponent {
     await this.api.getLogs().then((res: any) => {
       if (res) {
         this.logs = res;
-        console.log(this.logs);
+        this.tempLogs = res;
       } else {
       }
     });
+  }
+
+  OpenClose() {
+    this.menu = !this.menu;
+  }
+
+  employeeSelect(id: number) {
+    if (id === 0) {
+      this.logs = this.tempLogs;
+    } else {
+      this.logs = this.logs.filter(x => x.employee_id === id);
+    }
+  }
+
+  projectSelect(id: number) {
+    if (id === 0) {
+      this.logs = this.tempLogs;
+    } else {
+      this.logs = this.logs.filter(x => x.project_id === id);
+    }
   }
 
 }

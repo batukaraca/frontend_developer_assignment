@@ -1,7 +1,7 @@
 
 .left_side_div{
     width: 250px;
-    height: 100vh; 
+    height: 103vh; 
     position: relative; 
     background:linear-gradient(90deg, rgba(56,205,252,1) 7%, rgba(27,50,217,1) 100%); 
     position: fixed; 
@@ -103,7 +103,6 @@
     display: flex;
     float: right;
     margin-right: -15px;
-    margin-left: -15px;
 }
 
 .member_top_bar{
@@ -244,6 +243,16 @@ table th {
     background: #fff;
 }
 
+.mobile_top_div{
+    padding: 13px 10px 0px 10px; 
+    position: fixed; 
+    top: 0; 
+    background: blue; 
+    width: 100%; 
+    z-index: 9; 
+    display: none;
+}
+
 @media (max-width: 1200px) {
     .bottom_section p{
         font-size: 12px;
@@ -258,6 +267,91 @@ table th {
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
+    .mobile_top_div{
+        display: block;
+    }
+    .left_side_div{
+        display: none;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        z-index: 10;
+        top: 0;
+    }
+    .right_side_div{
+        width: 100%;
+        margin-right: 0;
+    }
+    .mmb{
+        margin-bottom: 15px;
+    }
+
+    .mpx{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .mpt{
+        padding-top: 60px;
+    }
     
+    .grt-mobile-button {
+		display:inline-block;
+		position:absolute;
+		right:10px;
+        top:-3px;
+		background:rgba(255, 255, 255, 0);
+		color:#153d6a;
+		margin:0;
+		padding:0;
+		cursor:pointer;
+		border: 0;
+        width:45px;
+        z-index: 11;
+        outline: none;
+	}
+
+    .line1, .line2, .line3, .line4 {
+		width: 30px;
+		height: 2px;
+		background-color: #fff;
+		margin: 6px 0;
+		transition: 0.4s;
+		display:block;
+    }
+    .grt-mobile-button_close {
+		display:inline-block;
+		position:absolute;
+		right:10px;
+        top:30px;
+		background:rgba(255, 255, 255, 0);
+		color:#153d6a;
+		margin:0;
+		padding:0;
+		cursor:pointer;
+		border: 0;
+        width:45px;
+        z-index: 11;
+        outline: none;
+	}
+
+    .line1_close, .line2_close {
+		width: 30px;
+		height: 2px;
+		background-color: #fff;
+		margin: 6px 0;
+		transition: 0.4s;
+		display:block;
+    }
+    .line1_close{
+        transform: rotate(-45deg);
+    }
+    .line2_close{
+        transform: rotate(45deg);
+        margin-top: -8px;
+    }
+    .mobile_m_show {
+        display: block !important;
+    }
 }
