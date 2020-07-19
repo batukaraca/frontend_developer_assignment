@@ -30,13 +30,6 @@ export class AppComponent {
     await this.api.getEmployees().then((res: any) => {
       if (res) {
         this.employees = res;
-        // tslint:disable-next-line: only-arrow-functions
-        this.employees = this.employees.sort(function (a: any, b: any) {
-          // Turn your strings into dates, and then subtract them
-          // to get a value that is either negative, positive, or zero.
-          return b.birthday - a.birthday;
-        });
-        console.log(this.employees);
       } else {
       }
     });
