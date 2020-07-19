@@ -83,15 +83,15 @@
             <div class="row">
                 <div class="col-xl-6 col-md-12">
                     <div class="row">
-                        <div class="col-12 margin-b-30">
-                            <img src="../assets/başvuru_duyuru.png" class="img-fluid" style="height: 385px;" alt="">
+                        <div class="col-12 margin-b-30 text-center">
+                            <img src="../assets/başvuru_duyuru.png" class="img-fluid" style="height: 405px;" alt="">
                             <div class="slider_btn_div">
                                 <span class="active"></span>
                                 <span></span>
                                 <span></span>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 margin-b-30">
                             <div class="small_div_section">
                                 <div class="row">
                                     <div class="col-md-12 text-c">
@@ -102,7 +102,7 @@
                                 </div>
                                 <div class="bottom_section">
                                     <div class="row">
-                                        <div class="col-md-6 bs_bt last_two" *ngFor="let new of news">
+                                        <div class="col-xl-6 bs_bt last_two" *ngFor="let new of news">
                                             <div class="row ">
                                                 <div class="col-5 padding-r-0">
                                                     <img src="../assets/1.png" class="img-fluid" alt="">
@@ -119,63 +119,129 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="small_div_section">
-                        <div class="row">
-                            <div class="col-12 text-center">
-                                <div class="top_section">
-                                    <h5 class="margin-b-0"><strong>Doğum Günleri</strong></h5>
+                <div class="col-xl-6 col-md-12">
+                    <div class="row">
+                        <div class="col-xl-6 col-md-12 margin-b-30">
+                            <div class="small_div_section">
+                                <div class="row">
+                                    <div class="col-12 text-center">
+                                        <div class="top_section">
+                                            <h5 class="margin-b-0"><strong>Doğum Günleri</strong></h5>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="bottom_section">
-                            <div class="row bs_bt" *ngFor="let employee of this.employees">
-                                <div class="col-3 text-center">
-                                    <img [src]="employee.avatar" class="img-fluid" alt="">
+                                <div class="bottom_section">
+                                    <div class="row bs_bt" *ngFor="let employee of this.employees">
+                                        <div class="col-3 text-center">
+                                            <img [src]="employee.avatar" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="col-9 padding-x-0">
+                                            <h6 class="margin-b-0">{{employee.first_name}} {{employee.last_name}}</h6>
+                                            <p class="margin-b-0">{{employee.email}}</p>
+                                            <a href="">Doğum gününü kutla
+                                                <img src="../../assets/send-1.png" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-9 padding-x-0">
-                                    <h5 class="margin-b-0">{{employee.first_name}} {{employee.last_name}}</h5>
-                                    <p class="margin-b-0">{{employee.email}}</p>
-                                    <a href="">Doğum gününü kutla
-                                        <img src="../../assets/send-1.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
 
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-12 margin-b-30">
+                            <div class="small_div_section">
+                                <div class="row">
+                                    <div class="col-12 text-center">
+                                        <div class="top_section">
+                                            <h5 class="margin-b-0"><strong>Açık Pozisyonlar</strong></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bottom_section">
+                                    <div class="row bs_bt" *ngFor="let job of this.jobs">
+                                        <div class="col-12">
+                                            <h6>{{job.title}}</h6>
+                                        </div>
+                                        <div class="col-12 margin-b-5">
+                                            <a href="{{job.link}}" target="_blank">İlana Git
+                                                <img src="../../assets/send-1.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="col-6">
+                                            <h6 class="margin-b-0">Başlangıç</h6>
+                                            <p class="margin-b-0">{{job.start_date}}</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <h6 class="margin-b-0">Bitiş</h6>
+                                            <p class="margin-b-0">{{job.end_date}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-md-12 margin-b-30">
+                            <div class="small_div_section">
+                                <div class="row">
+                                    <div class="col-12 text-center">
+                                        <div class="top_section">
+                                            <h5 class="margin-b-0"><strong>İlanlar</strong></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bottom_section adv_sec">
+                                    <div class="row bs_bt" *ngFor="let advertisement of this.advertisements">
+                                        <div class="col-12">
+                                            <h6>{{advertisement.title}}</h6>
+                                        </div>
+                                        <div class="col-12">
+                                            <p class="margin-b-0">{{advertisement.description}}</p>
+                                        </div>
+                                        <div class="col-12">
+                                            <a href="{{advertisement.link}}" target="_blank">İlana Git
+                                                <img src="../../assets/send-1.png" alt="">
+                                            </a>
+                                        </div>
+                                        <span class="adv_amount">{{advertisement.amount}} $</span>
+                                        <span class="employee_adv">{{advertisement.employee_name}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="small_div_section">
-                        <div class="row">
-                            <div class="col-12 text-center">
-                                <div class="top_section">
-                                    <h5 class="margin-b-0"><strong>Açık Pozisyonlar</strong></h5>
-                                </div>
+                <div class="col-xl-12 margin-b-30">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <div class="top_section">
+                                <h5 class="margin-b-0"><strong>Work Logs</strong></h5>
                             </div>
                         </div>
-                        <div class="bottom_section">
-                            <div class="row bs_bt" *ngFor="let job of this.jobs">
-                                <div class="col-12">
-                                    <h6>{{job.title}}</h6>
-                                </div>
-                                <div class="col-12 margin-b-5">
-                                    <a href="{{job.link}}" target="_blank">İlana Git
-                                        <img src="../../assets/send-1.png" alt="">
-                                    </a>
-                                </div>
-                                <div class="col-6">
-                                    <h6 class="margin-b-0">Başlangıç</h6>
-                                    <p class="margin-b-0">{{job.start_date}}</p>
-                                </div>
-                                <div class="col-6">
-                                    <h6 class="margin-b-0">Başlangıç</h6>
-                                    <p class="margin-b-0">{{job.end_date}}</p>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
+                    <div class="bottom_section padding-x-0 padding-t-0">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Employee</th>
+                                    <th scope="col">Project</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Hours</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let log of logs">
+                                    <td scope="row">{{log.id}}</td>
+                                    <td>{{log.employee_id}}</td>
+                                    <td>{{log.project_id}}</td>
+                                    <td>{{log.date}}</td>
+                                    <td>{{log.hours}}</td>
+                                    <td>{{log.description}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
             </div>
         </div>

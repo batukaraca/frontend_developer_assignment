@@ -36,4 +36,20 @@ export class ApiService {
                 return response;
             });
     }
+
+    getAdvertisements() {
+        return this.http.get<any>('assets/ilanlar.json')
+            .toPromise()
+            .then(response => {
+                return response;
+            });
+    }
+
+    getLogs() {
+        return this.http.get<any>('assets/work_logs.json')
+            .toPromise()
+            .then(response => {
+                return response;
+            });
+    }
 }

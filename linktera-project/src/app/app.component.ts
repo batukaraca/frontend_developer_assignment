@@ -12,11 +12,15 @@ export class AppComponent {
   employees = [];
   news = [];
   jobs = [];
+  advertisements = [];
+  logs = [];
 
   constructor(public api: ApiService) {
     this.getEmployees();
     this.getNews();
     this.getJobs();
+    this.getAdvertisements();
+    this.getLogs();
   }
 
 
@@ -51,6 +55,26 @@ export class AppComponent {
       if (res) {
         this.jobs = res;
         console.log(this.jobs);
+      } else {
+      }
+    });
+  }
+
+  async getAdvertisements() {
+    await this.api.getAdvertisements().then((res: any) => {
+      if (res) {
+        this.advertisements = res;
+        console.log(this.advertisements);
+      } else {
+      }
+    });
+  }
+
+  async getLogs() {
+    await this.api.getLogs().then((res: any) => {
+      if (res) {
+        this.logs = res;
+        console.log(this.logs);
       } else {
       }
     });
