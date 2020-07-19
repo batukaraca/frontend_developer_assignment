@@ -6,10 +6,10 @@
     padding: 0;
     font-family: 'Poppins';
     list-style: none;
-    font-size: 14px;
     text-decoration: none;
 }
 
 body{
-    background-color: #efefef;
+    background-color: #d3d4dd;
+    font-size: 14px;
 }
